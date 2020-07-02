@@ -41,7 +41,7 @@
 .sidebar{
     background-color: var(--color-grey-dark-1);
 
-    flex: 0 0 18%;
+    flex: 0 0 18%; // flex-grow, flex-shrink, flex-basis
 
 //used to send the copyright section all the way down
     display: flex;
@@ -68,11 +68,18 @@
     @media only screen and (max-width:$bp-small){
         flex-direction: column;
     }
+
+    @media only screen and (max-width: $bp-ultra-small) {
+        padding: 1.5rem;
+      }
+      @media only screen and (max-width: $bp-nano-small) {
+        padding: 0;
+      }
 }
 
 .description{
     background-color: #fff;
-    flex: 0 0 60%;
+    flex: 0 0 60%; // set to 60% width of container
     margin-right: 4.5rem;
     padding: 3rem;
     box-shadow: var(--shadow-light);
@@ -86,11 +93,24 @@
         margin-right: 0;
         margin-bottom: 3rem;
     }
+
+    @media only screen and (max-width: $bp-ultra-small) {
+        margin-bottom: 1.5rem;
+      }
+    
+      @media only screen and (max-width: $bp-nano-small) {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+      }
 }
 
 .user-reviews{
-    flex: 1;
+    flex: 1; // occupy the rest of the available space
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media only screen and (max-width: $bp-nano-small) {
+        margin-bottom: 1rem;
+      }
 }
